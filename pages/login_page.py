@@ -12,6 +12,8 @@ class LoginPage:
     def open_page(self, url):
         self.driver.get(url)
         self.driver.maximize_window()
+        url = self.driver.current_url
+        print(url)
 
     def enter_username(self, username):
         self.driver.find_element(*self.username_textbox).send_keys(username)
