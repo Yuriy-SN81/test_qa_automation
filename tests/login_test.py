@@ -7,11 +7,13 @@ import pytest
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-
+from selenium.webdriver.chrome.options import Options
 
 
 @pytest.fixture()
 def driver():
+    options = Options()
+    options.add_argument('--headless')
     service = Service(executable_path='D:/pythonProject/TestPageObjectModel/chromedriver.exe')
     options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(service=service, options=options)
